@@ -1,4 +1,4 @@
-﻿importScripts("db/indexeddb.js");
+importScripts("db/indexeddb.js");
 importScripts("sync/supabase-sync.js");
 
 const OFFSCREEN_DOCUMENT = "offscreen/offscreen.html";

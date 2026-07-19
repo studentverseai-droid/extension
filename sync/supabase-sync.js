@@ -1,4 +1,4 @@
-﻿
+
 "use strict";
 (() => {
   const SYNC_PULL_URL = "https://mphdhzsxjwhvkdbxyrfv.supabase.co/functions/v1/sync-pull";

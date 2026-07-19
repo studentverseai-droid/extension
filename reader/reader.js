@@ -1,4 +1,4 @@
-﻿const { sortNotesForDisplay } = globalThis.SnipazeNoteSort;
+const { sortNotesForDisplay } = globalThis.SnipazeNoteSort;
 const listEl = document.querySelector("[data-note-list]");
 const readerEl = document.querySelector("[data-reader]");
 const searchEl = document.querySelector("[data-search]");

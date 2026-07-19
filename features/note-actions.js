@@ -1,4 +1,4 @@
-﻿(() => {
+(() => {
   const { cssEscape, sanitizeHtml } = globalThis.SnipazeHtmlUtils;
   const CATEGORY_COLORS = ["purple", "green", "red", "blue", "amber"];
 

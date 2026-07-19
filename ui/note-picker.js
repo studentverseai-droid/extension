@@ -1,4 +1,4 @@
-﻿(() => {
+(() => {
   const { escapeAttribute, escapeHtml, sanitizeHtml } = globalThis.SnipazeHtmlUtils;
 
   const ROOT_ID = "snip-ocr-root";

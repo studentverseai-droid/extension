@@ -1,4 +1,4 @@
-﻿(() => {
+(() => {
   // Patch an older generation already present on this page before deciding whether to initialize.
   const existingFloatingHosts = [
     ...document.querySelectorAll("#snip-ocr-floating-host"),
