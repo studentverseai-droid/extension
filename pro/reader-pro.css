@@ -1,0 +1,109 @@
+@keyframes snip-pro-sheen {
+  0%, 60% { transform: translateX(-120%); }
+  100% { transform: translateX(220%); }
+}
+
+header .pro-tool {
+  position: relative; overflow: hidden;
+  height: 24px; padding: 0 10px; border-radius: 8px;
+  display: inline-flex; align-items: center; gap: 5px;
+  border: 1px solid rgba(212, 175, 90, 0.55);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.05)), rgba(255, 255, 255, 0.06);
+  color: #d4af5a; font: 800 10px/1 Inter, "Segoe UI", sans-serif; letter-spacing: 0.3px;
+  cursor: pointer; white-space: nowrap;
+  transition: border-color 200ms ease, box-shadow 200ms ease, transform 150ms ease;
+}
+
+header .pro-tool:hover {
+  border-color: rgba(230, 197, 124, 0.85);
+  box-shadow: 0 0 0 1px rgba(212, 175, 90, 0.15), 0 4px 14px rgba(212, 175, 90, 0.22);
+  transform: translateY(-1px);
+}
+
+header .pro-tool .pro-sheen {
+  position: absolute; top: 0; left: 0; width: 40%; height: 100%;
+  background: linear-gradient(100deg, transparent, rgba(255, 241, 214, 0.35), transparent);
+  animation: snip-pro-sheen 4.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+header .pro-tool.active {
+  border-color: rgba(212, 175, 90, 0.7);
+  background: linear-gradient(180deg, #caa14a, #a3811f);
+  color: #1c1710;
+}
+
+header .pro-tool.active .pro-sheen {
+  display: none;
+}
+
+/* .pro-check show/hide is intentionally kept identical to sidebar-pro-styles.js and
+   popup-pro.css - duplicated because a closed shadow DOM can't link those files. */
+header .pro-tool .pro-check {
+  display: none;
+}
+
+header .pro-tool.active .pro-check {
+  display: inline;
+  margin-left: 1px;
+}
+
+body.light-theme header .pro-tool {
+  border-color: rgba(180, 130, 20, 0.55);
+  background: rgba(255, 255, 255, 0.92);
+  color: #8a5a0b;
+}
+
+body.light-theme header .pro-tool:hover {
+  border-color: rgba(180, 130, 20, 0.8);
+  box-shadow: 0 8px 18px rgba(180, 130, 20, 0.16);
+}
+
+body.light-theme header .pro-tool.active {
+  border-color: rgba(212, 175, 90, 0.7);
+  background: linear-gradient(180deg, #caa14a, #a3811f);
+  color: #1c1710;
+}
+
+/* .pro-cta visual values (padding/border-radius/border/background/color/font-weight/font-size)
+   are intentionally kept identical to sidebar-pro-styles.js's .pro-cta - duplicated because a closed
+   shadow DOM can't link this file, not because the two were designed separately. */
+.pro-cta {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(212, 175, 90, 0.55);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.05)), rgba(255, 255, 255, 0.06);
+  color: #d4af5a;
+  font-family: inherit;
+  font-weight: 800;
+  font-size: 12px;
+  line-height: 1;
+  cursor: pointer;
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+}
+
+.pro-cta:hover {
+  border-color: rgba(230, 197, 124, 0.85);
+  box-shadow: 0 0 0 1px rgba(212, 175, 90, 0.15), 0 4px 14px rgba(212, 175, 90, 0.22);
+}
+
+.pro-cta:disabled {
+  cursor: default;
+  opacity: 0.75;
+}
+
+/* .pro-plan-table is intentionally kept identical to sidebar-pro-styles.js's copy -
+   duplicated because a closed shadow DOM can't link that file. */
+.pro-plan-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8px 0;
+  font-size: 11px;
+}
+
+.pro-plan-table th,
+.pro-plan-table td {
+  text-align: left;
+  padding: 4px 6px;
+  border-bottom: 1px solid rgba(212, 175, 90, 0.2);
+}

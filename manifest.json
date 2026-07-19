@@ -1,0 +1,113 @@
+{
+  "manifest_version": 3,
+  "name": "Snipaze",
+  "version": "1.0.2",
+  "description": "Capture screenshots, extract text with OCR, and organize research notes from any webpage into your personal research workspace.",
+  "permissions": [
+    "activeTab",
+    "alarms",
+    "contextMenus",
+    "identity",
+    "offscreen",
+    "scripting",
+    "storage",
+    "tabs",
+    "unlimitedStorage"
+  ],
+  "oauth2": {
+    "client_id": "534585512257-gpirgeersl5js677idtbo8f8u3vqkjot.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/userinfo.email"
+    ]
+  },
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_title": "Snipaze",
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "commands": {
+    "capture-screenshot": {
+      "suggested_key": {
+        "default": "Alt+S"
+      },
+      "description": "Capture a screenshot with Snipaze"
+    },
+    "extract-ocr-text": {
+      "suggested_key": {
+        "default": "Alt+T"
+      },
+      "description": "Extract OCR text with Snipaze"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "db/indexeddb.js",
+        "sync/device-identity.js",
+        "themes/settings-styles.js",
+        "ui/settings.js",
+        "themes/sidebar-styles.js",
+        "pro/pro-state.js",
+        "pro/sidebar-pro-styles.js",
+        "ui/content-styles.js",
+        "ui/html-utils.js",
+        "ui/note-sort.js",
+        "ui/title-suggestions.js",
+        "features/page-reference.js",
+        "features/clipboard-capture.js",
+        "ui/structured-editor.js",
+        "themes/export-styles.js",
+        "features/note-export.js",
+        "themes/reload-guard-styles.js",
+        "ui/reload-guard.js",
+        "themes/capture-modal-styles.js",
+        "ui/note-picker.js",
+        "ui/capture-modal.js",
+        "features/capture-flow.js",
+        "ui/category-render.js",
+        "ui/sidebar-render.js",
+        "ui/note-filters.js",
+        "features/note-actions.js",
+        "features/inline-insert.js",
+        "features/export-actions.js",
+        "ui/sidebar-events.js",
+        "ui/floating-shell.js",
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "icons/*"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; worker-src 'self'; object-src 'self'"
+  }
+}

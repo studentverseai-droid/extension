@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Snipaze Tools</title>
+    <link rel="stylesheet" href="popup.css">
+    <link rel="stylesheet" href="../pro/popup-pro.css">
+  </head>
+  <body>
+    <main class="popup">
+      <header>
+        <img src="../icons/icon128.png" alt="">
+        <div>
+          <strong>Snipaze</strong>
+          <small>Your Research Companion</small>
+        </div>
+        <button type="button" class="pro-tool" data-open-pro title="Snipaze Pro" aria-label="Snipaze Pro">
+          <span class="pro-sheen" aria-hidden="true"></span>
+          Pro
+          <span class="pro-check" aria-hidden="true">&#10003;</span>
+        </button>
+      </header>
+
+      <button class="tool" type="button" data-action="screenshot">
+        <span class="tool-icon camera" aria-hidden="true"></span>
+        <span><strong>Capture</strong><small>Screenshot</small></span>
+        <kbd aria-label="Alt plus S">
+          <span class="key key-alt">ALT</span>
+          <span class="key-plus">+</span>
+          <span class="key key-action">S</span>
+        </kbd>
+      </button>
+
+      <button class="tool" type="button" data-action="ocr">
+        <span class="tool-icon text-icon" aria-hidden="true">T</span>
+        <span><strong>Extract</strong><small>OCR Text</small></span>
+        <kbd aria-label="Alt plus T">
+          <span class="key key-alt">ALT</span>
+          <span class="key-plus">+</span>
+          <span class="key key-action">T</span>
+        </kbd>
+      </button>
+
+      <button class="tool" type="button" data-action="save-link">
+        <span class="tool-icon link-icon" aria-hidden="true">&#128279;</span>
+        <span><strong>Save Reference</strong><small>Page context</small></span>
+      </button>      <button class="tool" type="button" data-action="open-all-notes">
+        <span class="tool-icon notes-icon" aria-hidden="true">&#128214;</span>
+        <span><strong>Open All Notes</strong><small>Full view</small></span>
+      </button>
+      <label class="tool toggle-tool">
+        <input type="checkbox" data-action="auto-save">
+        <span class="switch" aria-hidden="true"><span></span></span>
+        <span><strong data-auto-save-label>OFF</strong><small>Auto Save</small></span>
+      </label>
+      <label class="tool toggle-tool">
+        <input type="checkbox" data-action="floating-icon">
+        <span class="switch" aria-hidden="true"><span></span></span>
+        <span><strong data-icon-label>SHOW</strong><small>Floating Icon</small></span>
+      </label>
+
+      <button class="shortcut-warning" type="button" data-action="shortcut-settings" hidden>
+        Shortcut unavailable <span>Set shortcuts</span>
+      </button>
+      <p class="status" role="status" aria-live="polite"></p>
+    </main>
+    <script src="../themes/theme-manager.js"></script>
+    <script src="../pro/pro-state.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>

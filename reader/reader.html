@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Snipaze Full View</title>
+  <link rel="stylesheet" href="reader.css">
+  <link rel="stylesheet" href="../pro/reader-pro.css">
+</head>
+<body>
+  <div class="app">
+    <aside>
+      <header><img src="../icons/icon128.png" alt=""><div><strong>Snipaze</strong><small>Your Research Companion</small></div><div class="header-badges"><button type="button" class="pro-tool" data-open-pro title="Snipaze Pro" aria-label="Snipaze Pro"><span class="pro-sheen" aria-hidden="true"></span>Pro<span class="pro-check" aria-hidden="true">&#10003;</span></button><span class="view-badge">Full View</span></div></header>
+      <input type="search" data-search placeholder="Search notes…" aria-label="Search notes">
+      <div class="note-list" data-note-list></div>
+    </aside>
+    <main>
+      <div class="toolbar">
+        <button type="button" data-prev>← Previous</button>
+        <button type="button" data-next>Next →</button>
+        <span class="save-status" data-status role="status">Ready</span>
+        <button type="button" class="structured-edit-toggle" data-edit-note>Edit</button>
+        <details class="download-menu" data-download-menu><summary>Download</summary><div><button type="button" data-export-format="txt">TXT</button><button type="button" data-export-format="word">Word</button><button type="button" data-export-format="pdf">PDF</button></div></details>
+        <button type="button" class="danger" data-delete>Delete</button>
+      </div>
+      <article data-reader><div class="empty">Select a note to read.</div></article>
+    </main>
+  </div>
+  <script src="../db/indexeddb.js"></script>
+  <script src="../themes/theme-manager.js"></script>
+  <script src="../ui/html-utils.js"></script>
+  <script src="../ui/note-sort.js"></script>
+  <script src="../themes/export-styles.js"></script>
+  <script src="../features/note-export.js"></script>
+  <script src="../ui/structured-editor.js"></script>
+  <script src="../pro/pro-state.js"></script>
+  <script src="reader.js"></script>
+</body>
+</html>
